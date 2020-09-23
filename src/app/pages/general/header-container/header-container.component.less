@@ -1,0 +1,49 @@
+@import "~src/assets/tool.less";
+.header-container {
+  height: 176px;
+  color: #ccc;
+  .top-nav {
+    height: 36px;
+    line-height: 36px;
+    background-color: #333;
+    font-size: 12px;
+    .top-left-box {
+      background: url("@{imgUrl}header-imgs/trumpet.gif") center left no-repeat;
+      margin-left: 2px;
+      padding-left: 26px;
+      a {
+        color: @themeColor;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+    .top-right-box {
+      & > *,
+      & a {
+        margin-left: 10px;
+        cursor: pointer;
+        color: #ccc;
+        &:hover {
+          color: #fff;
+        }
+      }
+      & > div:not(:first-child)::before {
+        content: "";
+        height: 16px;
+        // margin-right: 10px;
+        border-left: 1px solid #5c5c5c;
+      }
+      i {
+        background-image: url("@{imgUrl}common/sprite-1.png");
+        background-position: 0 0;
+        height: 11px;
+        width: 7px;
+        display: inline-block;
+        margin-right: 6px;
+      }
+    }
+  }
+}
