@@ -1,4 +1,10 @@
 @import "~src/assets/tool.less";
+@spriteUrl: "@{imgUrl}/common/sprite-1.png";
+.beforeLine(@height,@color) {
+  content: "";
+  height: @height;
+  border-left: 1px solid @color;
+}
 .header-container {
   height: 176px;
   color: #ccc;
@@ -6,7 +12,7 @@
     height: 36px;
     line-height: 36px;
     background-color: #333;
-    font-size: 12px;
+    font-size: @sizeMin;
     .top-left-box {
       background: url("@{imgUrl}header-imgs/trumpet.gif") center left no-repeat;
       margin-left: 2px;
@@ -31,19 +37,149 @@
         }
       }
       & > div:not(:first-child)::before {
-        content: "";
-        height: 16px;
-        // margin-right: 10px;
-        border-left: 1px solid #5c5c5c;
+        .beforeLine(16px,#5c5c5c);
       }
       i {
-        background-image: url("@{imgUrl}common/sprite-1.png");
+        background-image: url(@spriteUrl);
         background-position: 0 0;
         height: 11px;
         width: 7px;
         display: inline-block;
         margin-right: 6px;
       }
+    }
+  }
+
+  .logo-search-cart {
+    margin-top: 26px;
+    .logo-box {
+      width: 212px;
+      // height: 60px;
+      img {
+        width: 54px;
+        height: 56px;
+        margin-right: 6px;
+      }
+      h1 {
+        font-size: 28px;
+        line-height: 56px;
+        color: @themeColor;
+        margin: 0 0;
+        letter-spacing: 2px;
+      }
+    }
+
+    .search-box {
+      position: relative;
+      .search-hot {
+        height: 18px;
+        line-height: 18px;
+        overflow: hidden;
+        margin-top: 4px;
+        padding-left: 8px;
+        a {
+          font-size: @sizeMin;
+          padding: 0 10px;
+          line-height: 12px;
+          overflow: hidden;
+          color: @themeColor;
+          display: inline-block;
+          border-right: 1px solid #ccc;
+        }
+        a:last-child {
+          border-right: 0;
+        }
+      }
+      i {
+        position: absolute;
+        left: 18px;
+        top: 12px;
+        width: 14px;
+        height: 14px;
+        background: url(@spriteUrl) 0 -518px;
+      }
+      input {
+        width: 442px;
+        height: 38px;
+        padding-left: 38px;
+        border: 1px solid @themeColor;
+        border-bottom-left-radius: 19px;
+        border-top-left-radius: 19px;
+        color: #333;
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        width: 90px;
+        height: 38px;
+        color: #fff;
+        background: @themeColor;
+        border-top-right-radius: 19px;
+        border-bottom-right-radius: 19px;
+        border: none;
+        letter-spacing: 1px;
+        font-size: 16px;
+        &:hover {
+          background-color: #e2c199;
+          cursor: pointer;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .cart-box {
+      width: 134px;
+      height: 38px;
+      margin-left: 49px;
+      line-height: 38px;
+      border: 1px solid @themeColor;
+      border-radius: 19px;
+      font-size: 14px;
+      color: @themeColor;
+      cursor: pointer;
+      &:hover {
+        background-color: #f5f3ef;
+      }
+      i {
+        background-image: url(@spriteUrl);
+        display: inline-block;
+      }
+      i:first-child {
+        background-position: 0 -148px;
+        height: 18px;
+        width: 18px;
+        margin-right: 5px;
+      }
+      i:last-child {
+        background-position: 0 -51px;
+        height: 19px;
+        line-height: 19px;
+        width: 19px;
+        margin-left: 10px;
+        color: #fff;
+        font-style: normal;
+        font-size: @sizeMin;
+      }
+    }
+  }
+
+  .category {
+    margin-top: 30px;
+    height: 30px;
+    font-size: 14px;
+    color: #000;
+    font-weight: 700;
+    & > div:hover {
+      color: #cc9756;
+      border-bottom: 3px solid #cc9756;
+      cursor: pointer;
+    }
+    .active {
+      color: #cc9756;
+      border-bottom: 3px solid #cc9756;
     }
   }
 }

@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~ng-zorro-antd/ng-zorro-antd.less";
 
- 
 .centent-container {
   width: 1000px;
   margin: 0 auto;
@@ -15,6 +14,29 @@
   align-items: center;
 }
 .flex-l-r {
+  .flex;
+  justify-content: space-between;
+}
+
+.flex-l-r-center {
+  .flex;
+  justify-content: center
+}
+.flex-center {
+  .flex-align-center;
+  .flex-l-r-center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-around {
+  .flex;
+  justify-content: space-around;
+}
+
+.flex-between {
   .flex;
   justify-content: space-between;
 }
